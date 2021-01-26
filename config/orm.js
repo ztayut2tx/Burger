@@ -33,7 +33,7 @@ function objToSql(object) {
 
 
 var orm = {
-    all: function(tableInput, cb) {
+    selectAll: function(tableInput, cb) {
         
         var queryString = "SELECT * FROM " + tableInput + ";";
         
