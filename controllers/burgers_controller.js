@@ -1,7 +1,9 @@
+//dependencies
 var express = require("express");
 var burger = require("../models/burger.js");
 var router = express.Router();
 
+//routes
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
         var hbsObj = {
@@ -11,6 +13,7 @@ router.get("/", function (req, res) {
         res.render("index", hbsObj);
     });
 });
+//adds burger to be devoured
 router.post("/api/burgers", function (req, res) {
     burger.create([
         "burger_name"
@@ -20,6 +23,8 @@ router.post("/api/burgers", function (req, res) {
         res.json({ id: result.insertId });
     });
 });
+
+//adds to devoured burgers
 router.put("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;
     

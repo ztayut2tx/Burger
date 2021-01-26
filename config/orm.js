@@ -1,3 +1,4 @@
+//dependencies
 var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
@@ -10,7 +11,7 @@ function printQuestionMarks(num) {
 
     return array.toString();
 }
-
+//function to convert object to sql syntax
 function objToSql(object) {
     
     var array = [];
@@ -31,7 +32,7 @@ function objToSql(object) {
     return array.toString();
 }
 
-
+//the object for sql statements
 var orm = {
     selectAll: function(tableInput, cb) {
         
